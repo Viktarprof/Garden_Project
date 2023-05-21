@@ -1,0 +1,43 @@
+.navMenuContainer{
+    width: 1400px;
+    margin: 10px 0 80px 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+.logo_Btn{
+    width: 256px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navLinks{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.links{
+    display: flex;
+    gap: 35px;
+    
+}
+.links a{
+    text-decoration: none;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+
+    cursor: pointer;
+    color: #000000;
+}
+.cartBtn{
+    width:27px;
+    height:29px;
+
+    color: #000000;
+
+    cursor: pointer;
+}

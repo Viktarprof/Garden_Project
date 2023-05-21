@@ -1,0 +1,28 @@
+.productsListContainer {
+  margin-bottom: 110px;
+}
+.productsListContainer h2 {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 81px;
+}
+
+.productsList {
+  width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  justify-content: center;
+  column-gap: 40px;
+  row-gap: 122px;
+}
+.offerSale {
+
+  margin-bottom: 45px;
+}
+.offerSale h2 {
+  font-weight: 700;
+  font-size: 40px;
+  margin: 50px 0 20px 0;
+  margin-bottom: 40px;
+}

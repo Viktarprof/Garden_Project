@@ -1,0 +1,37 @@
+.categoriesContainer {
+  width: 1400px;
+  margin-top: 50px;
+}
+
+.categoriesContainer h1 {
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 0.03em;
+}
+
+.categoryList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 25px;
+  row-gap: 100px;
+
+  text-align: center;
+
+  margin-bottom: 50px;
+  margin-top: 80px;
+}
+.headCatalog{
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+.categoryListContainer {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 25px;
+  margin-top: 20px;
+  margin-bottom: 110px;
+}

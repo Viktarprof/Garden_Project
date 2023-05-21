@@ -1,0 +1,19 @@
+.categoryItem {
+    width: 318px;
+    height: 350px;
+  }
+  .categoryItem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .categoryItem p {
+    margin-top: 20px;
+    text-align: center;
+
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+  
+    cursor: pointer;
+  }

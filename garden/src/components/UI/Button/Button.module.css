@@ -1,0 +1,55 @@
+.btnCatalog {
+  width: 125px;
+  height: 49px;
+
+  background-color: var(--btnCatalog);
+  color: var(--colorBtn);
+
+  border: 2px solid var(--btnCatalog);
+  border-radius: 5px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.btnSale {
+  width: 155px;
+  height: 82px;
+
+  background: var(--colorBtnSale);
+  border: none;
+  border-radius: 13px;
+
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.btnOffer {
+  width: 473px;
+  height: 75.44px;
+
+  border-radius: 25.1468px;
+  border: 2px solid white;
+  background-color: rgba(240, 248, 255, 0);
+  color: var(--colorText);
+
+  font-weight: 700;
+  font-size: 28.7392px;
+  line-height: 120%;
+  letter-spacing: 0.03em;
+}
+
+.btnAllCategories {
+  width: 120px;
+  height: 30.97px;
+
+  font-size: 12px;
+  line-height: 130%;
+
+  text-align: center;
+  color: var(--colorBtnAllCaterories);
+  background-color: white;
+
+  border: 2px solid var(--colorBtnAllCaterories);
+}

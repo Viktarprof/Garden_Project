@@ -1,8 +1,8 @@
 import React from 'react'
 import s from './Offer.module.css'
 import smilingDwarf from './media/smilingDwarf.png'
-import Input from '../UI/Input/Input'
-import Button from '../UI/Button/Button'
+
+import Form from '../Form/Form'
 
 function Offer() {
   const submite = (event) => {
@@ -24,18 +24,16 @@ function Offer() {
         <div className={s.offer}>
             <h2>5% off</h2>
             <p>on the first order</p>
-            <form onSubmit={submite}>
-              <Input 
-                type="tel" 
-                name='phone' 
-                styles={'inputOffer'} 
-                placeholder = '+49 XXX-XXX-XX-XX' 
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"/>
-              <Button  
-                title='Get a discount'  
-                styles={'btnOffer'} />
-            </form>
-            
+            <Form 
+              submite={submite} 
+              type="number" 
+              name="phone"  
+              placeholder="+49" 
+              regexp={/[0-9]{10}/}
+              styles={"inputOffer"}
+              title="Get a discount" 
+              stylesBtn={"btnOffer"}
+            />
         </div>
     </div>
   )

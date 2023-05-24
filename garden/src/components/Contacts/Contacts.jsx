@@ -10,13 +10,13 @@ function Contacts() {
           <h3>Contact</h3>
           <p>+49 999 999 99 99</p>
         <div className={s.socialLogo}>
-          <div>
+          <div className={s.instagram}>
             <a href="https://www.instagram.com/aittr.de/" target="_blank">
               <img width={46} src={instagram} alt="iconInstagram"/>
               <p> instagram</p>
             </a>
           </div>
-          <div>
+          <div className={s.whatsApp}>
             <a href="https://api.whatsapp.com/send?phone=+493052014182_WhatsApp" target="_blank">
               <img src={whatsApp} alt="iconWhatsApp"/>
               <p> WhatsApp</p>

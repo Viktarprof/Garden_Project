@@ -1,30 +1,20 @@
-import React, { useMemo } from 'react'
-import s from './MapWindow.module.css'
-import { GoogleMap, Marker, useLoadScript} from "@react-google-maps/api";
-
 function MapWindow() {
-
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCsFatFOH5N9QpQ1oBag9TGUHH3kg_VnZY",
-  });
-  const center = useMemo(() => ({ lat: 52.5079329, lng: 13.3750447  }), []);
-  
   return (
-    <div className={s.map}>
-       {!isLoaded ? (
-        <h1>Loading...</h1>
-      ) : (
-        <GoogleMap
-          mapContainerClassName={s.map_container}
-          center={center}
-          zoom={17}
-          >
-       <Marker position={{ lat: 52.5079329, lng: 13.3750447 }} /> 
-          </GoogleMap>
-      )}
-          
+    <div style={{ width: "100%" }}>
+      <iframe
+        title="GoogleMaps"
+        style={{
+          width: "100%",
+          height: "525px",
+          border: "0",
+          scrolling: "no",
+          marginHeight: "0",
+          marginWidth: "0"
+        }}
+        src="https://maps.google.com/maps?width=100%25&amp;height=525&amp;hl=en&amp;q=Tel-Ran.de%20GmbH+(My%20Business%20Name)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+      ></iframe>
     </div>
-  )
+  );
 }
 
-export default MapWindow
+export default MapWindow;

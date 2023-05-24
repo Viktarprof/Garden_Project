@@ -10,11 +10,12 @@
 .productsList {
   width: 1400px;
   display: grid;
+  align-items: baseline;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
   justify-content: center;
   column-gap: 40px;
-  row-gap: 122px;
+  row-gap: 90px;
 }
 .offerSale {
 

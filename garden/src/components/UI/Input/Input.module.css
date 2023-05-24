@@ -14,3 +14,31 @@
 
   color: #6c6c6c;
 }
+
+.inputOffer::-webkit-inner-spin-button,
+.inputOffer::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.inputOrder {
+  width: 446px;
+  height: 73px;
+
+  padding: 25px;
+  margin: 0px 0 25px 0;
+
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 20px;
+
+  font-weight: 500;
+  font-size: 18px;
+
+  color: #929292;
+}
+.inputOrder::-webkit-inner-spin-button,
+.inputOrder::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

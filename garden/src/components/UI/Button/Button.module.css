@@ -53,3 +53,63 @@
 
   border: 2px solid var(--colorBtnAllCaterories);
 }
+
+.toCart {
+  width: 341px;
+  height: 86px;
+
+  border: 2px solid var(--btnCatalog);
+  border-radius: 10px;
+
+  font-weight: 700;
+  font-size: 28px;
+
+  color: var(--colorText);
+  background: var(--btnCatalog);
+
+  margin: 40px 0 40px 0;
+  transition-duration: 1s;
+}
+
+.toCart:hover {
+  transition-duration: 1s;
+  transform: scale(1.03);
+}
+.addToCart {
+  width: 279px;
+  height: 72px;
+
+  border: 2px solid #339933;
+  border-radius: 21px;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 130%;
+
+  color: var(--textGreen);
+  background: #f1fff1;
+}
+
+.orderBtn {
+  width: 446px;
+  height: 76px;
+
+  border-radius: 17px;
+  border: none;
+
+  font-weight: 700;
+  font-size: 28px;
+
+  color: #ffffff;
+  background-color: #339933;
+}
+
+.toBackStore {
+  width: 200px;
+  height: 26px;
+
+  border: none;
+  background-color: #ffffff00;
+  font-weight: 500;
+  font-size: 20px;
+}

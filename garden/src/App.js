@@ -2,13 +2,15 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Footer from './components/Footer/Footer';
 import HomePage from './components/Pages/HomePage/HomePage';
-import ProductsListPages from './components/Pages/ProductsListPages/ProductsListPages';
 import SalesPages from './components/Pages/SalesPages/SalesPages';
 import NavMenu from './components/NavMenu/NavMenu';
 import NotFoundPage from './components/Pages/NotFoundPage/NotFoundPage';
-import CartPages from './components/Pages/CartPages/CartPages';
 import CategoriesPages from './components/Pages/CategoriesPages/CategoriesPages';
-import AllProducts from './components/Pages/AllProducts/AllProducts';
+import AllProducts from './components/Pages/AllProductsPages/AllProducts';
+import CategoriesInfoPages from './components/Pages/CategoriesInfoPages/CategoriesInfoPages';
+import ProductInfoPage from './components/Pages/ProductInfoPage/ProductInfoPage';
+import CartPages from './components/Pages/CartPages/CartPages';
+
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="categories/all" element={<CategoriesPages/>} />
         <Route path="/allProducts" element={<AllProducts/>} />
         <Route path="/allSales" element={<SalesPages/>}/>
+        <Route path="/categories/:id" element={<CategoriesInfoPages/>} />
+        <Route path="/products/:id" element={<ProductInfoPage/>} />
         <Route path="/cart" element={<CartPages/>} />
         <Route path="/*" element={<NotFoundPage/>} />
       </Routes>
@@ -28,3 +32,4 @@ function App() {
 }
 
 export default App;
+

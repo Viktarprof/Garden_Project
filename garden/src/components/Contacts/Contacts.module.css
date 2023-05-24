@@ -31,10 +31,16 @@
   margin-bottom: 10px;
 }
 
-.socialLogo p {
+.instagram p,
+.whatsApp p{
   font-weight: 600;
   font-size: 15px;
   color: black;
+}
+
+.instagram p:hover,
+.whatsApp p:hover{
+  color: var(--textGreen);
 }
 
 .addersPlace {

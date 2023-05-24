@@ -21,8 +21,8 @@
 .links{
     display: flex;
     gap: 35px;
-    
 }
+
 .links a{
     text-decoration: none;
 
@@ -33,6 +33,11 @@
     cursor: pointer;
     color: #000000;
 }
+
+.links a:hover{
+    color: var(--textGreen);
+}
+
 .cartBtn{
     width:27px;
     height:29px;
@@ -40,4 +45,7 @@
     color: #000000;
 
     cursor: pointer;
+}
+.cartBtn:hover{
+    color: var(--textGreen);
 }

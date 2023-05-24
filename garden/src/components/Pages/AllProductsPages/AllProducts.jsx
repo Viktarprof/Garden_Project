@@ -7,6 +7,7 @@ function AllProducts() {
   return (
     <div>
         <ProductsList 
+          showFilter={true}
           title={'All products'} 
           styles={'productsListContainer'}/>
     </div>

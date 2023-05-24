@@ -3,14 +3,16 @@ import s from './ProductsList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { load_products } from '../../asyncActions/categories';
 import ProductItem from '../ProductItem/ProductItem';
+import Filters from '../Filters/Filters';
 
 
-function ProductsList({ title, styles, showItems, showSale }) {
+function ProductsList({ title, styles, showItems, showSale, showFilter }) {
 
   const dispatch = useDispatch();
   const allProducts = useSelector((store) => store.allProducts);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(load_products);
   }, []);
 
@@ -26,6 +28,7 @@ function ProductsList({ title, styles, showItems, showSale }) {
   return (
     <div className={`${s[styles]}`}>
       <h2>{title}</h2>
+      {showFilter && <Filters />}
       <div className={s.productsList}>
         {showSaleProducts.map((el) => (
           <ProductItem key={el.id} {...el} />

@@ -40,6 +40,7 @@ function HomePage() {
           styles={"offerSale"}
           showItems={3}
           showSale={true}
+          showFilter={false}
         />
       </div>
     </>

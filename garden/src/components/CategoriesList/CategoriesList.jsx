@@ -11,8 +11,11 @@ function CategoriesList({ title, showItems, styles, showBtn }) {
   const allCategory = useSelector((store) => store.allCategory);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(load_categories);
+    
   }, [dispatch]);
+
 
   const btnAllCategory = 
     showBtn 

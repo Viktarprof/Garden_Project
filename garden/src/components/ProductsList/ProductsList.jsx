@@ -6,7 +6,7 @@ import ProductItem from '../ProductItem/ProductItem';
 import Filters from '../Filters/Filters';
 
 
-function ProductsList({ title, styles, showItems, showSale, showFilter }) {
+function ProductsList({ title, styles, showItems, showSale, showCheckbox }) {
 
   const dispatch = useDispatch();
   const allProducts = useSelector((store) => store.allProducts);
@@ -28,7 +28,7 @@ function ProductsList({ title, styles, showItems, showSale, showFilter }) {
   return (
     <div className={`${s[styles]}`}>
       <h2>{title}</h2>
-      {showFilter && <Filters />}
+      {<Filters showCheckbox={showCheckbox}/>}
       <div className={s.productsList}>
         {showSaleProducts.map((el) => (
           <ProductItem key={el.id} {...el} />

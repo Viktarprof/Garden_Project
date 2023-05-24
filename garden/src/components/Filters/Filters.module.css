@@ -1,6 +1,59 @@
-.filterContainer{
-    width: 1100px;
-    height: 60px;
-    background-color: aqua;
-    margin-bottom: 60px;
+.filterContainer {
+  width: 1100px;
+  height: 60px;
+  margin-bottom: 60px;
+
+  display: flex;
+  align-items: center;
+}
+
+.price,
+.sorted,
+.discounted {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.price{
+    gap:15px;
+    margin-right: 40px;
+}
+
+.discounted,
+.sorted{
+    gap:40px;
+    margin-right: 90px;
+}
+.price input {
+  width: 103px;
+  height: 40px;
+
+  padding: 10px;
+
+  border: 1px solid #000000;
+  border-radius: 7px;
+}
+.discounted input {
+  width: 40px;
+  height: 40px;
+
+  padding: 10px;
+
+  border: 1px solid #000000;
+  border-radius: 7px;
+}
+.sorted input {
+  width: 219px;
+  height: 40px;
+
+  padding: 10px;
+
+  border: 1px solid #000000;
+  border-radius: 7px;
 }

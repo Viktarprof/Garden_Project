@@ -8,8 +8,10 @@ function AllProducts() {
     <div>
         <ProductsList 
           showFilter={true}
-          title={'All products'} 
-          styles={'productsListContainer'}/>
+          title={'All products'}
+          styles={'productsListContainer'}
+          showCheckbox={true}
+        />
     </div>
   )
 }

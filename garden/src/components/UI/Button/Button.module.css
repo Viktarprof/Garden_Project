@@ -1,3 +1,4 @@
+
 .btnCatalog {
   width: 125px;
   height: 49px;
@@ -11,6 +12,13 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btnCatalog:active {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 20px 6px var(--btnCatalog);
 }
 
 .btnSale {
@@ -88,6 +96,13 @@
 
   color: var(--textGreen);
   background: #f1fff1;
+
+  transition-duration: 1s;
+}
+.addToCart:hover {
+  transition-duration: 1.5s;
+  color: white;
+  background: var(--textGreen);
 }
 
 .orderBtn {

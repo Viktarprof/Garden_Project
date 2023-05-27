@@ -24,24 +24,34 @@
   text-align: center;
   text-decoration: none;
 }
+
 .socialLogo a {
   text-decoration: none;
 }
-.socialLogo img {
+
+.socialLogo svg {
+  width: 46px;
+  height: 46px;
   margin-bottom: 10px;
+  transition: fill 0.3s ease;
+  color: black;
+}
+
+.socialLogo a:hover svg {
+  fill: var(--textGreen);
+}
+
+.socialLogo a:hover p {
+  color: var(--textGreen);
 }
 
 .instagram p,
-.whatsApp p{
+.whatsApp p {
   font-weight: 600;
   font-size: 15px;
   color: black;
 }
 
-.instagram p:hover,
-.whatsApp p:hover{
-  color: var(--textGreen);
-}
 
 .addersPlace {
   width: 560px;

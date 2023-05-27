@@ -1,7 +1,9 @@
 import React from "react";
 import s from "./Contacts.module.css";
-import instagram from './media/iconsInstagramm.png'
-import whatsApp from './media/iconswhatsapp.png'
+// import instagram from './media/iconsInstagramm.png'
+// import whatsApp from './media/iconswhatsapp.png'
+import {SlSocialInstagram } from 'react-icons/sl';
+import { BsWhatsapp } from 'react-icons/bs'
 
 function Contacts() {
   return (
@@ -11,14 +13,17 @@ function Contacts() {
           <p>+49 999 999 99 99</p>
         <div className={s.socialLogo}>
           <div className={s.instagram}>
+          
             <a href="https://www.instagram.com/aittr.de/" target="_blank">
-              <img width={46} src={instagram} alt="iconInstagram"/>
+              {/* <img width={46} src={instagram} alt="iconInstagram"/> */}
+              <SlSocialInstagram width={46} />
               <p> instagram</p>
             </a>
           </div>
           <div className={s.whatsApp}>
             <a href="https://api.whatsapp.com/send?phone=+493052014182_WhatsApp" target="_blank">
-              <img src={whatsApp} alt="iconWhatsApp"/>
+              <BsWhatsapp width={46} />
+              {/* <img src={whatsApp} alt="iconWhatsApp"/> */}
               <p> WhatsApp</p>
             </a>
           </div>

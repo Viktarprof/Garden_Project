@@ -33,18 +33,15 @@ function ProductItem({ product }) {
     dispatch(incrCountAction(id));
     console.log('test click add product');
   }
-
   return (
     <div className={s.productItem}>
-      <NavLink NavLink to={`/products/${id}`}>
+      <NavLink to={`/products/${id}`}>
         <img width={319} src={`${baseUrl}${image}`} alt={title} />
       </NavLink>
       <div className={`${s.addToCart}`}>
-         <Button title={"To cart"} styles={'addToCart'} onClick={addToCartHandler}/>
+        <Button title={"To cart"} styles={"addToCart"} onClick={addToCartHandler} />
       </div>
-      <div className={s.price}>
-        {priceElement}
-      </div>
+      <div className={s.price}>{priceElement}</div>
       <p>{title}</p>
     </div>
   );

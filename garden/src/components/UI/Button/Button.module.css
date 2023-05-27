@@ -113,3 +113,21 @@
   font-weight: 500;
   font-size: 20px;
 }
+.btnMinus,
+.btnPlus {
+  width: 40px;
+  height: 36px;
+  border: none;
+  background: none;
+  font-size: 35px;
+}
+.xMark {
+  width: 14.46px;
+  height: 14.4px;
+  position: absolute;
+  right: 10px;
+  top: 43px;
+  background: none;
+  border: none;
+  font-size: 30px;
+}

@@ -36,7 +36,7 @@ function CategoriesList({ title, showItems, styles, showBtn }) {
       </div>
       <div className={`${s[styles]}`}>
         {allCategory.slice(0, showItems).map((el) => (
-          <CategoryItem key={el.id} {...el} />
+          <CategoryItem key={el.id} category={el} />
         ))}
       </div>
     </div>

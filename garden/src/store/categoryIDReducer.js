@@ -1,5 +1,4 @@
-const defaultState = {};
-
+const defaultState = { };
 const LOAD_CATEGORIES_PRODUCTS = "LOAD_CATEGORIES_PRODUCTS";
 
 export const categoryProductsReducer = (state = defaultState, action) => {

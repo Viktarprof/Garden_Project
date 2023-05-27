@@ -20,13 +20,16 @@
 
 .testCONTAINER {
   width: 825px;
-  height: 900px;
-  background: rgba(68, 68, 155, 0.179);
 }
 .orderContainer {
   margin-bottom: 140px;
   display: flex;
   justify-content: space-between;
+}
+.stickyOrderDetail {
+  position: sticky;
+  top: 0;
+  background-color: white;
 }
 .orderDetail {
   width: 496px;

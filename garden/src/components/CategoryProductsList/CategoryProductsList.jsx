@@ -18,7 +18,7 @@ function CategoryProductsList({ products, title}) {
       <h2>{title}</h2>
       <Filters showFilter={true} showCheckbox={true}/>
       <div className={s.categoryContainer}>
-        {products.map((el) => <ProductItem key={el.id} {...el}/>)}
+        {products.map((el) => <ProductItem key={el.id} product={el}/>)}
       </div>
     </div>
   );

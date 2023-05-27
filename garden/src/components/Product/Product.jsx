@@ -2,11 +2,17 @@ import React, { useEffect } from "react";
 import ImageZoom from "react-image-zoom";
 import s from "./Product.module.css";
 import Button from "../UI/Button/Button";
+import { useDispatch } from "react-redux";
+import { addToCartAction } from "../../store/cartReducer";
 
-function Product({ title, image, price, discont_price, description }) {
+function Product({ product }) {
+
+  const { title, image, price, discont_price, description } = product;
+
   useEffect(() => {
     window.scrollTo(0, 0);
-  })
+  });
+  const dispatch = useDispatch();
 
   const baseUrl = "http://localhost:3333/";
   const newDiscontPrice = Math.floor(discont_price);
@@ -35,6 +41,10 @@ function Product({ title, image, price, discont_price, description }) {
     img: `${baseUrl}${image}`,
     zoomPosition: "original",
   };
+  const addToCartHandler = () => {
+    dispatch(addToCartAction(product))
+    console.log('test click add product');
+  }
 
   return (
     <div className={s.infoContainer}>
@@ -45,7 +55,7 @@ function Product({ title, image, price, discont_price, description }) {
         </div>
         <div>
           <div className={s.price}>{priceElement}</div>
-          <Button title={"To cart"} styles={"toCart"} />
+          <Button title={"To cart"} styles={"toCart"} onClick={addToCartHandler}/>
           <div className={s.dashed}></div>
           <div className={s.description}>
             <p>Description</p>

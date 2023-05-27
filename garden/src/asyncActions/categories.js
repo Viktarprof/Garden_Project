@@ -36,7 +36,7 @@ export const GetCategoryProducts = (id) => {
 
 export const GetInfoProducts = (id) => {
   return function(dispatch){
-    console.log(`${category_products_url}${id}`);
+    // console.log(`${category_products_url}${id}`);
     fetch(`${productsInfoUrl}${id}`)
       .then((res) => res.json())
       .then((data) => dispatch(loadInfoProductsAction(data)));

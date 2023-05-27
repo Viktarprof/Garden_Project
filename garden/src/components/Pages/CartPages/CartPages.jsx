@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./CartPages.module.css";
-import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
 import arrowRigth from "./media/arrowRigth.png";
 import Form from "../../Form/Form";
+import { useSelector } from 'react-redux'
+import CartList from "../../CartList/CartList";
 
 function CartPages() {
+  
+  const cart = useSelector(store => store.cart);
+
+  useEffect(()=>{
+    localStorage.setItem('products', JSON.stringify(cart))
+  }, [cart])
 
   const submite = (event) => {
     event.preventDefault();
@@ -18,6 +25,9 @@ function CartPages() {
     event.target.reset()
   }
 
+  
+
+  const total = cart.reduce((acc, item) => acc + item.count * item.price, 0).toFixed(2);
 
   return (
     <div className={s.cartContainer}>
@@ -29,16 +39,18 @@ function CartPages() {
 
       <div className={s.orderContainer}>
         <div className={s.testCONTAINER}>
-          <p>новый компопнент с продуктами </p>
+          {cart.length !== 0 
+            ? <CartList /> 
+            : <p className={s.warning}>Your Cart Is Empty!</p>}
         </div>
 
-        <div className={s.orderDetail}>
+        <div className={`${s.orderDetail} ${s.stickyOrderDetail}`}>
           <p>Order details</p>
           <div className={s.total}>
             <p>Total</p>
-            <p>000000</p>
+            <p>{total}</p>
           </div>
-         <Form
+         <Form 
             submite={submite}
             type={"number"}
             placeholder={"Phone number"}

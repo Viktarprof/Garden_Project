@@ -1,0 +1,75 @@
+.itemContainer {
+  width: 824px;
+  height: 247px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  border-bottom: 1px solid #a7a7a7;
+
+}
+.itemContainer img {
+  width: 192.6px;
+  height: 166.64px;
+  border-radius: 10px;
+  margin-right: 30px;
+}
+
+.counter {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.counter p:nth-child(1) {
+  width: 318px;
+  height: 46px;
+  margin-right: 25px;
+
+  font-weight: 600;
+  font-size: 18px;
+
+  color: #3a3a3a;
+}
+
+.btnTriggers {
+  width: 140px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border: 1px solid #000000;
+  border-radius: 12px;
+}
+.btnTriggers p {
+  width: 7px;
+
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
+.btnTriggers svg {
+  font-size: smaller;
+}
+
+.priceContainer {
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.newPrice {
+  font-weight: 600;
+  font-size: 40px;
+}
+span {
+  font-size: 15px;
+}
+
+.oldPrice {
+  font-weight: 500;
+  font-size: 20px;
+  text-decoration-line: line-through;
+  color: #8b8b8b;
+}

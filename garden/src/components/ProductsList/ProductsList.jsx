@@ -6,10 +6,13 @@ import ProductItem from '../ProductItem/ProductItem';
 import Filters from '../Filters/Filters';
 
 
-function ProductsList({ title, styles, showItems, showSale, showCheckbox }) {
+function ProductsList({ title, styles, showItems, showSale, showCheckbox, onChange }) {
 
   const dispatch = useDispatch();
-  const allProducts = useSelector((store) => store.allProducts);
+  const allProducts = useSelector((store) => store.allProducts)
+  // .filter(el => el.showBySale));
+
+  console.log(allProducts);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,10 +31,15 @@ function ProductsList({ title, styles, showItems, showSale, showCheckbox }) {
   return (
     <div className={`${s[styles]}`}>
       <h2>{title}</h2>
-      {<Filters showCheckbox={showCheckbox}/>}
+      {<Filters 
+        showCheckbox={showCheckbox}
+        onChange={onChange}/>}
       <div className={s.productsList}>
         {showSaleProducts.map((el) => (
-          <ProductItem key={el.id} {...el} />
+          <ProductItem 
+            key={el.id} 
+            {...el}
+            product={el} />
         ))}
       </div>
     </div>
@@ -39,4 +47,3 @@ function ProductsList({ title, styles, showItems, showSale, showCheckbox }) {
 }
 
 export default ProductsList;
-

@@ -1,8 +1,14 @@
 import React from 'react';
 import s from './Filters.module.css'
 import Input from '../UI/Input/Input';
+import { useDispatch } from 'react-redux';
+import { filterProductsBySaleAction } from '../../store/productsReducer';
 
 function Filters({ showCheckbox }) {
+  // const dispatch = useDispatch()
+  // const handleCheckboxChange = () => {
+  //   dispatch(filterProductsBySaleAction(true));
+  // };
  
   return (
     <div className={s.filterContainer}>
@@ -21,7 +27,11 @@ function Filters({ showCheckbox }) {
       {showCheckbox && (
         <div className={s.discounted}>
           <p> Discounted items </p>
-          <Input type="checkbox" />
+          <Input 
+            styles={'checkbox'}
+            type="checkbox" 
+            // onChange={handleCheckboxChange} 
+            />
         </div>
       )}
 
@@ -38,3 +48,4 @@ function Filters({ showCheckbox }) {
 }
 
 export default Filters
+

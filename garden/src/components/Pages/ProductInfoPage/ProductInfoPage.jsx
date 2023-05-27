@@ -19,7 +19,7 @@ function ProductInfoPage() {
         {category_products.map((el) => 
             <Product 
                 key={el.id} 
-                {...el}/>)}
+                product={el}/>)}
     </div>
   )
 }

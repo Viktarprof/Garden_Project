@@ -1,5 +1,4 @@
 import s from './CategoriesPages.module.css'
-
 import CategoriesList from '../../CategoriesList/CategoriesList';
 
 function CategoriesPages({}) {

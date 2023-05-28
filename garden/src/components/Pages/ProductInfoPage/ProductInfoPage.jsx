@@ -10,7 +10,7 @@ function ProductInfoPage() {
   const dispatch = useDispatch();
 
   const category_products = useSelector((store) => store.allProducts);
-  console.log(category_products);
+  // console.log(category_products);
 
   useEffect(() => dispatch(GetInfoProducts(id)), []);
 

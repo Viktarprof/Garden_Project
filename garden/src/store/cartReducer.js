@@ -8,7 +8,7 @@ const DELL_PRODUCT = 'DELL_PRODUCT';
 export const cartReducer = (state = defaultState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      console.log(action.payload);
+      // console.log(action.payload);
 
       const findElem = state.findIndex((el) => el.id === action.payload.id); //index
       if (findElem !== -1) {

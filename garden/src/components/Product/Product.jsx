@@ -3,11 +3,11 @@ import ImageZoom from "react-image-zoom";
 import s from "./Product.module.css";
 import Button from "../UI/Button/Button";
 import { useDispatch } from "react-redux";
-import { addToCartAction } from "../../store/cartReducer";
+import { addToCartAction, incrCountAction } from "../../store/cartReducer";
 
 function Product({ product }) {
 
-  const { title, image, price, discont_price, description } = product;
+  const { id, title, image, price, discont_price, description } = product;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -37,12 +37,13 @@ function Product({ product }) {
   const zoomProps = {
     width: 710,
     height: 710,
-    // zoomWidth: 710,
     img: `${baseUrl}${image}`,
     zoomPosition: "original",
   };
   const addToCartHandler = () => {
-    dispatch(addToCartAction(product))
+
+    dispatch(addToCartAction(product));
+    dispatch(incrCountAction(product.id)); // когда нахожусь на стр продукта и добавляю его то в корзине отображается 1 без него 0
     console.log('test click add product');
   }
 

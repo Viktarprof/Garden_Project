@@ -9,9 +9,7 @@ import Filters from '../Filters/Filters';
 function ProductsList({ title, styles, showItems, showSale, showCheckbox, onChange }) {
 
   const dispatch = useDispatch();
-  const allProducts = useSelector((store) => store.allProducts)
-  // .filter(el => el.showBySale));
-
+  const allProducts = useSelector((store) => store.allProducts).filter(el => el.showProductsSale && el.rangeVisible);
   console.log(allProducts);
 
   useEffect(() => {
@@ -19,21 +17,20 @@ function ProductsList({ title, styles, showItems, showSale, showCheckbox, onChan
     dispatch(load_products);
   }, []);
 
-  let showSaleProducts = allProducts;
+  let showSaleProducts = allProducts; 
   if (showSale) {
     showSaleProducts = allProducts
-      .filter((el) => el.discont_price)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, showItems);
-     
+      .filter((el) => el.discont_price)// фильтрую по скидке, 
+      .sort(() => Math.random() - 0.5) //сортирую рамдомного
+      .slice(0, showItems) // отображаю только 3
   }
 
   return (
     <div className={`${s[styles]}`}>
       <h2>{title}</h2>
-      {<Filters 
+      <Filters 
         showCheckbox={showCheckbox}
-        onChange={onChange}/>}
+        onChange={onChange}/>
       <div className={s.productsList}>
         {showSaleProducts.map((el) => (
           <ProductItem 

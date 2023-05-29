@@ -6,10 +6,9 @@ function SalesPages() {
   return (
     <div>
       <ProductsList
-        showFilter={true}
         title={'Products with sale'}
         styles={"productsListContainer"}
-        showSale={true}
+        showSale={true}  // показываем продукты со скидкой
         showCheckbox={false}
       />
     </div>

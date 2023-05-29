@@ -16,10 +16,12 @@ function CategoryProductsList({ products, title}) {
   return (
     <div className={s.categoryListProduct}>
       <h2>{title}</h2>
-      <Filters showFilter={true} showCheckbox={true}/>
-      <div className={s.categoryContainer}>
-        {products.map((el) => <ProductItem key={el.id} product={el}/>)}
-      </div>
+      <Filters 
+        showFilter={true} 
+        showCheckbox={true}/>
+        <div className={s.categoryContainer}>
+         {products.map((el) => <ProductItem key={el.id} product={el}/>)}
+        </div>
     </div>
   );
 }

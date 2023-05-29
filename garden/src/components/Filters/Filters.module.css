@@ -48,12 +48,16 @@
   border: 1px solid #000000;
   border-radius: 7px;
 }
-.sorted input {
+.sorted select {
   width: 219px;
   height: 40px;
-
   padding: 10px;
 
   border: 1px solid #000000;
   border-radius: 7px;
+  
+  appearance: none;
+  overflow: hidden;
+  background: url('./media/arrows.png') no-repeat right;
+  background-position: calc(100% - 10px);
 }

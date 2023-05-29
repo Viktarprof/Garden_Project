@@ -37,9 +37,8 @@ function HomePage() {
         <ProductsList
           title={"Sale"}
           styles={"offerSale"}
-          showItems={3}
-          showSale={true}
-          showFilter={false}
+          showItems={3} // показываем тоько три продукта
+          showSale={true} // показываем продукты со скидкой 
         />
       </div>
     </>

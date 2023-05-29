@@ -56,7 +56,7 @@ function CartPages() {
             placeholder={"Phone number"}
             name="phone"
             styles={"inputOrder"}
-            regexp={/[0-9]{10}/}
+            regexp={/[0-9]{9}/}
             stylesBtn={"orderBtn"} 
             title={"Order"}
           />

@@ -9,8 +9,6 @@ function ProductItem({ product }) {
 
   const { id, title, image, price, discont_price } = product;
 
- 
-
   const baseUrl = "http://localhost:3333/";
   const dispatch = useDispatch();
 
@@ -31,7 +29,6 @@ function ProductItem({ product }) {
   const addToCartHandler = () => {
     dispatch(addToCartAction(product));
     dispatch(incrCountAction(id));
-    console.log('test click add product');
   }
   return (
     <div className={s.productItem}>

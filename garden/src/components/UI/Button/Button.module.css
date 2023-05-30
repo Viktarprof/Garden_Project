@@ -146,3 +146,19 @@
   border: none;
   font-size: 30px;
 }
+
+.btnPaginate{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #339933;
+  background-color:#f1fff1;
+  transition-duration: 1s;
+  font-weight: 500;
+  font-size: 20px;
+
+}
+.btnPaginate:hover{
+transform: scale(1.2);
+transition-duration: 1s;
+}

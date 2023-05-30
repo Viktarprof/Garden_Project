@@ -12,14 +12,13 @@ function CategoriesInfoPages() {
   const dispatch = useDispatch();
   const { id } = useParams();
   console.log(id);
-  const category_products = useSelector((store) => store.categoryProducts)
-  console.log(category_products);
+  const category_products = useSelector((store) => store.categoryProducts);
 
-  useEffect(() => dispatch(GetCategoryProducts(id)), [])
+  useEffect(() => dispatch(GetCategoryProducts(id)), {})
 
   const products = category_products.data ? category_products.data : [];
-  const title = category_products.category ? category_products.category.title : ''
-
+  const title = category_products.category ? category_products.category.title : '';
+  console.log(products);
 
   return (
     <>

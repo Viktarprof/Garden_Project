@@ -82,7 +82,7 @@ function Filters({ showCheckbox }) {
 
       {showCheckbox && (
         <div className={s.discounted}>
-          <p> Discounted items </p>
+          <p>Discounted items</p>
           <Input
             styles={"checkbox"}
             type="checkbox"

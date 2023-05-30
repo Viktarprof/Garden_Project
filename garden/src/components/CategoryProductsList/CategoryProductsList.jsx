@@ -4,11 +4,15 @@ import ProductItem from "../ProductItem/ProductItem";
 import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Filters from "../Filters/Filters";
 
-function CategoryProductsList({ products, title}) {
+
+function CategoryProductsList({ products, title }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
   })
+
+
+  products.filter((el) => el.showProductsSale && el.rangeVisible);
 
   if (products.length === 0) {
     return <NotFoundPage />;
@@ -17,13 +21,15 @@ function CategoryProductsList({ products, title}) {
     <div className={s.categoryListProduct}>
       <h2>{title}</h2>
       <Filters 
-        showFilter={true} 
-        showCheckbox={true}/>
-        <div className={s.categoryContainer}>
-         {products.map((el) => <ProductItem key={el.id} product={el}/>)}
-        </div>
+        showCheckbox={true}
+      />
+      <div className={s.categoryContainer}>
+        {products.map((el) => <ProductItem key={el.id} product={el}/>)}
+      </div>
     </div>
   );
 }
 
 export default CategoryProductsList;
+
+

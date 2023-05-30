@@ -2,7 +2,7 @@ import React from "react";
 import s from "./CategoryItem.module.css";
 import { NavLink } from "react-router-dom";
 
-function CategoryItem({ category}) {
+function CategoryItem({ category }) {
   const {id, title, image} = category;
   const baseUrl = "http://localhost:3333/";
 

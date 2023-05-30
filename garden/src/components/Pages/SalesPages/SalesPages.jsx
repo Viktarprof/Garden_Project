@@ -8,8 +8,9 @@ function SalesPages() {
       <ProductsList
         title={'Products with sale'}
         styles={"productsListContainer"}
-        showSale={true}  // показываем продукты со скидкой
+        showSale={true} // показываем продукты со скидкой
         showCheckbox={false}
+        showPagination={false}
       />
     </div>
   )

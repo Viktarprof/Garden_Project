@@ -7,6 +7,8 @@ const categoriesAll = 'categories/all';
 const productsAll = 'products/all';
 const category_products = 'categories/'
 const products = 'products/'
+const sale_send = 'sale/send'
+const order_send = 'order/send'
 
 const category_products_url = baseUrl + category_products;
 const categoriesUrl = baseUrl + categoriesAll;
@@ -42,3 +44,36 @@ export const GetInfoProducts = (id) => {
       .then((data) => dispatch(loadInfoProductsAction(data)));
   }
 };
+
+export const order_sale_req = (phone) => {
+  return new Promise((resolve, reject) => {
+    fetch(`${baseUrl}${sale_send}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: JSON.stringify(phone)
+    })
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        resolve(); // Разрешаем промис после успешного выполнения запроса
+      })
+      .catch(error => {
+        console.error(error);
+        reject(error); // Отклоняем промис при возникновении ошибки
+      });
+  });
+}
+
+export const order_send_req = (phone) => {
+  fetch(`${baseUrl}${order_send}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8'
+    },
+    body: JSON.stringify(phone)
+  })
+    .then(res => res.json())
+    .then(json => console.log(json))
+}

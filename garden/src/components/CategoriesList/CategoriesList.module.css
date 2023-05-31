@@ -35,3 +35,20 @@
   margin-top: 20px;
   margin-bottom: 110px;
 }
+
+
+@media (max-width: 1300px)  {
+  .categoriesContainer {
+    width: 665px;
+  }
+
+  .categoryListContainer{
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .headCatalog{
+    justify-content: space-between;
+  }
+}

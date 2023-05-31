@@ -4,6 +4,7 @@ const ADD_TO_CART = "ADD_TO_CART";
 const INCR_COUNT_PRODUCT = "INCR_COUNT_PRODUCT";
 const DECR_COUNT_PRODUCT = "DECR_COUNT_PRODUCT";
 const DELL_PRODUCT = 'DELL_PRODUCT';
+const CLEAR_CART = 'CLEAR_CART';
 
 export const cartReducer = (state = defaultState, action) => {
   switch (action.type) {
@@ -37,6 +38,9 @@ export const cartReducer = (state = defaultState, action) => {
 
     case DELL_PRODUCT:
       return state.filter((el) => el.id !== action.payload);
+    
+    case CLEAR_CART:
+      return [];
 
     default:
       return state;
@@ -48,3 +52,4 @@ payload,
 });
 export const decrCountAction = (payload) => ({type: DECR_COUNT_PRODUCT, payload});
 export const dellProductAction = (payload) => ({type:DELL_PRODUCT, payload});
+export const clearCartAction = () => ({type: CLEAR_CART});

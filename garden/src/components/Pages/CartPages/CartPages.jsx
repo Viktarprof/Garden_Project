@@ -1,47 +1,68 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import s from "./CartPages.module.css";
 import Button from "../../UI/Button/Button";
 import arrowRigth from "./media/arrowRigth.png";
 import Form from "../../Form/Form";
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from "react-redux";
 import CartList from "../../CartList/CartList";
+import { order_send_req } from "../../../asyncActions/requests_products";
+import { clearCartAction } from "../../../store/cartReducer";
+import { NavLink } from "react-router-dom";
 
 function CartPages() {
-  
-  const cart = useSelector(store => store.cart);
+  const dispatch = useDispatch();
+  const [modal, setModal] = useState(false);
 
-  useEffect(()=>{
-    localStorage.setItem('products', JSON.stringify(cart))
-  }, [cart])
+  const cart = useSelector((store) => store.cart);
+
+  useEffect(() => {
+    localStorage.setItem("products", JSON.stringify(cart));
+  }, [cart]);
 
   const submite = (event) => {
     event.preventDefault();
     const { phone } = event.target;
-    const numberPhone = {
-      id: Date.now(),
-      phone: phone.value
+    const phoneNumber = phone.value;
+    if (phoneNumber === "") {
+      alert("Please, enter a phone number"); // проверяю когда поле инпута пустое
+    } else {
+      const numberPhone = {
+        id: Date.now(),
+        phone: phoneNumber,
+      };
+      // console.log(numberPhone);
+      order_send_req(numberPhone);
+      dispatch(clearCartAction());
+      setModal(true);
+      event.target.reset();
     }
-    console.log(numberPhone);
-    event.target.reset()
-  }
+  };
 
-  
+  const closeModal = () => {
+    setModal(false); // отключаю модальное окно
+  };
 
-  const total = cart.reduce((acc, item) => acc + item.count * item.price, 0).toFixed(2);
+  const total = cart
+    .reduce((acc, item) => acc + item.count * item.price, 0)
+    .toFixed(2);
 
   return (
     <div className={s.cartContainer}>
       <h2>Shopping cart</h2>
       <div className={s.toBackStore}>
-        <Button styles="toBackStore" title={"Back to the store "} />
+        <NavLink to="/allProducts">
+          <Button styles="toBackStore" title={"Back to the store "} />
+        </NavLink>
         <img width={7} height={13} src={arrowRigth} alt="arrowRigth" />
       </div>
 
       <div className={s.orderContainer}>
         <div className={s.testCONTAINER}>
-          {cart.length !== 0 
-            ? <CartList /> 
-            : <p className={s.warning}>Your Cart Is Empty!</p>}
+          {cart.length !== 0 ? (
+            <CartList />
+          ) : (
+            <p className={s.warning}>Your cart is empty!</p>
+          )}
         </div>
 
         <div className={`${s.orderDetail} ${s.stickyOrderDetail}`}>
@@ -50,18 +71,31 @@ function CartPages() {
             <p>Total</p>
             <p>{total}</p>
           </div>
-         <Form 
+          <Form
             submite={submite}
             type={"number"}
             placeholder={"Phone number"}
             name="phone"
             styles={"inputOrder"}
-            regexp={/[0-9]{9}/}
-            stylesBtn={"orderBtn"} 
+            regexp={/^\d{10}$/}
+            stylesBtn={"orderBtn"}
             title={"Order"}
           />
         </div>
       </div>
+
+      {modal && (
+        <div className={s.modalBackdrop}>
+          <div className={s.modal}>
+            <h3>Your order is accepted.</h3>
+            <Button
+              onClick={closeModal}
+              title={"Close"}
+              styles={"closeModal"}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

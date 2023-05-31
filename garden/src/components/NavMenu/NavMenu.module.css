@@ -68,3 +68,11 @@
     background-color: #339933df;
 
 }
+
+
+
+@media (max-width: 1300px)  {
+    .navMenuContainer{
+        width: 900px;
+    }
+}

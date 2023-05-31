@@ -3,8 +3,18 @@ import s from "./Form.module.css";
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
 
-function Form({ submite, type, name, placeholder, regexp, styles, title, stylesBtn }) {
-  const [error, setError] = useState(false);
+function Form({
+  submite,
+  type,
+  name,
+  placeholder,
+  regexp,
+  styles,
+  title,
+  stylesBtn,
+}) {
+
+  const [error, setError] = useState(true);
 
   const valueInput = (event) => {
     const { value } = event.target;
@@ -12,11 +22,11 @@ function Form({ submite, type, name, placeholder, regexp, styles, title, stylesB
   };
 
   const checkRegexp = () => {
-    if (!error) {
-      alert("Введите номер телефона в формате 9 цифр");
+    if (error) {
+      alert("Please, enter your correct phone number (10 numbers)");
     }
   };
-
+  
   return (
     <div>
       <form onSubmit={submite}>
@@ -29,11 +39,13 @@ function Form({ submite, type, name, placeholder, regexp, styles, title, stylesB
           onChange={valueInput}
           onBlur={checkRegexp}
         />
-        <Button title={title} styles={stylesBtn} />
+        <Button
+          title={title}
+          styles={stylesBtn}
+        />
       </form>
     </div>
   );
 }
 
 export default Form;
-

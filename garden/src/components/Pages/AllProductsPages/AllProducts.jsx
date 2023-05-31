@@ -10,6 +10,7 @@ function AllProducts() {
           title={'All products'}
           styles={'productsListContainer'}
           showCheckbox={true}
+          location = 'all_products'
         />
     </div>
   )

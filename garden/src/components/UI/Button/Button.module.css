@@ -162,3 +162,14 @@
 transform: scale(1.2);
 transition-duration: 1s;
 }
+.closeModal{
+  border: 1px solid green;
+  border-radius: 10px;
+  background-color: #d4f6d4;
+  font-size: 15px;
+  font-weight: 600;
+
+}
+.closeModal:hover{
+  background-color: #9ef19e;
+}

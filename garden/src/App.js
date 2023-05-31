@@ -24,7 +24,7 @@ function App() {
         <Route path="/categories/:id" element={<CategoriesInfoPages/>} />
         <Route path="/products/:id" element={<ProductInfoPage/>} />
         <Route path="/cart" element={<CartPages/>} />
-        <Route path="/*" element={<NotFoundPage/>} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Routes>
       <Footer />
     </div>

@@ -36,3 +36,28 @@
     width: 630px;
     height: 630px;
 }
+
+@media (max-width: 1300px)  {
+    .head{
+        width: 1000px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px)  {
+
+.titleContainer{
+
+    height: 400px;
+    }
+    .head{
+        width: 700px;
+        flex-direction: column;
+    }
+    .titleButton{
+        width: 650px;
+    }
+    .head img{
+      display: none;
+    }
+}

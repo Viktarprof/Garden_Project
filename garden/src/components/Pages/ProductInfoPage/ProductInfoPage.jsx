@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import s from "./ProductInfoPage.module.css";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { GetInfoProducts } from "../../../asyncActions/categories";
+import { GetInfoProducts } from "../../../asyncActions/requests_products";
 import Product from "../../Product/Product";
 
 function ProductInfoPage() {

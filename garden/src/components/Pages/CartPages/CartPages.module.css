@@ -68,3 +68,36 @@
   font-weight: 600;
   font-size: 32px;
 }
+
+.warning{
+  font-size: 30px;
+  color: crimson;
+}
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(144, 219, 158, 0.5); 
+  backdrop-filter: blur(5px); 
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  gap: 30px;
+
+  background-color: #fff;
+
+  padding: 20px;
+  border-radius: 10px;
+}

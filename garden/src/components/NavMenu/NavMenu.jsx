@@ -26,7 +26,7 @@ function NavMenu() {
 
         <div className={s.navLinks}>
             <div className={s.links}>
-            <NavLink to="/" >
+                <NavLink to="/" >
                     Main Page
                 </NavLink>
                 <NavLink to="/allProducts">
@@ -37,10 +37,10 @@ function NavMenu() {
                 </NavLink>
             </div>
             <div>
-            <NavLink to="/cart" >
-                <HiOutlineShoppingBag className={s.cartBtn} />
-                    {cartItemCount > 0 && <span className={s.cartItemCount}>{cartItemCount}</span>}
-            </NavLink>
+                <NavLink to="/cart" >
+                    <HiOutlineShoppingBag className={s.cartBtn} />
+                        {cartItemCount > 0 && <span className={s.cartItemCount}>{cartItemCount}</span>}
+                </NavLink>
             </div>
         </div>
     </div>

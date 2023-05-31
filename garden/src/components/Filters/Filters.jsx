@@ -11,8 +11,17 @@ import {
   sortByPriceDesctAction,
   sortByRangeAction,
 } from "../../store/productsReducer";
+import { 
+  filterCategoryProductsBySaleAction, 
+  sortCategoryByDefaultAction, 
+  sortCategoryByNameAsctAction, 
+  sortCategoryByNameDesctAction, 
+  sortCategoryByPriceAsctAction, 
+  sortCategoryByPriceDesctAction, 
+  sortCategoryProductsByRangeAction 
+} from "../../store/categoryIDReducer";
 
-function Filters({ showCheckbox }) {
+function Filters({ showCheckbox, location }) {
   const [{ from = "", to = "" }, setRange] = useState({});
   const dispatch = useDispatch();
 
@@ -22,19 +31,33 @@ function Filters({ showCheckbox }) {
     switch (e.target.value) {
       // console.log(e.tagret.value);
       case "default":
-        dispatch(sortByDefaultAction());
+        if (location === "category_products"){
+          dispatch(sortCategoryByDefaultAction())
+        } else {
+          dispatch(sortByDefaultAction())
+        }
         break;
       case "priceDesc":
-        dispatch(sortByPriceDesctAction());
+        if (location === "category_products"){
+          dispatch(sortCategoryByPriceDesctAction())
+        } else {
+          dispatch(sortByPriceDesctAction());
+        }
         break;
       case "priceAsc":
-        dispatch(sortByPriceAsctAction());
+        if (location === "category_products"){
+          dispatch(sortCategoryByPriceAsctAction())
+        } else {
+          dispatch(sortByPriceAsctAction());
+        }
         break;
       case "nameDesc":
-        dispatch(sortByNameDesctAction());
+          dispatch(location === "category_products" ? sortCategoryByNameDesctAction() : sortByNameDesctAction());
+        
         break;
       case "nameAsc":
-        dispatch(sortByNameAsctAction());
+          dispatch(location === "category_products" ? sortCategoryByNameAsctAction() : sortByNameAsctAction());
+      
         break;
       default:
         break;
@@ -42,10 +65,9 @@ function Filters({ showCheckbox }) {
   };
 
   const handleRange = (e) => {
-   
     const targetInput = e.target.name;
     const newValue = e.target.value.replace(",", ".");
-    console.log(newValue);
+    // console.log(newValue);
     if (!isNaN(newValue)) {
       setRange((prevRange) => ({
         ...prevRange,
@@ -56,10 +78,14 @@ function Filters({ showCheckbox }) {
         from: targetInput === "from" ? +newValue : from || -Infinity,
         to: targetInput === "to" ? +newValue : to || Infinity,
       };
-      dispatch(sortByRangeAction(range));
+        dispatch(location === "category_products" ? sortCategoryProductsByRangeAction(range) : sortByRangeAction(range));
     }
   };
 
+  const check_box_handler = (e) => {
+    // console.log(e.target.checked);
+    dispatch(location === "category_products" ? filterCategoryProductsBySaleAction(e.target.checked) : filterProductsBySaleAction(e.target.checked));
+  };
 
   return (
     <div className={s.filterContainer}>
@@ -72,13 +98,14 @@ function Filters({ showCheckbox }) {
           name="from"
           onChange={handleRange}
         />
-        <Input
-          type="text"
-          placeholder="to"
-          name="to"
-          onChange={handleRange}
-        />
+        <Input 
+          type="text" 
+          value={to || ""}
+          placeholder="to" 
+          name="to" 
+          onChange={handleRange} />
       </div>
+
 
       {showCheckbox && (
         <div className={s.discounted}>
@@ -86,7 +113,7 @@ function Filters({ showCheckbox }) {
           <Input
             styles={"checkbox"}
             type="checkbox"
-            onClick={(e) => dispatch(filterProductsBySaleAction(e.target.checked))}
+            onClick={check_box_handler}
           />
         </div>
       )}

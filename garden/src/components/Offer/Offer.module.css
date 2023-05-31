@@ -22,18 +22,13 @@
   animation: dwarfAnimation 5s ease-in-out infinite;
 }
 
-/* @keyframes dwarfAnimation {
-  0%, 100% {
-    transform: translate3d(200px, 50px, 0);
-  }
-  50% {
-    transform: translate3d(40px, 0px, 0);
-  }
-} */
 .offer {
   width: 473px;
   color: var(--colorText);
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .offer h2 {
   width: 405px;
@@ -66,4 +61,39 @@
   line-height: 120%;
   letter-spacing: 0.03em;
   margin-bottom: 45px;
+}
+
+@media (max-width: 1150px)  {
+  .offerContainer {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 950px)  {
+  .offerContainer {
+    flex-direction: column;
+    height: 900px;
+  }
+  .smilingDwarf {
+  
+    width: 350px;
+    height: 350px;
+  }
+  .offer h2 {
+    width: 320px;
+    font-size: 90px;
+  }
+  .offer p{
+    width: 350px;
+    font-size: 35px
+  }
+  .offer {
+    width: 473px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
 }

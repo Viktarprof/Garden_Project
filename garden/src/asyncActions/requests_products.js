@@ -45,7 +45,8 @@ export const GetInfoProducts = (id) => {
   }
 };
 
-export const order_sale_req = (phone) => {
+
+export const sale_req = (phone) => {
   return new Promise((resolve, reject) => {
     fetch(`${baseUrl}${sale_send}`, {
       method: 'POST',
@@ -57,14 +58,16 @@ export const order_sale_req = (phone) => {
       .then(res => res.json())
       .then(json => {
         console.log(json);
-        resolve(); // Разрешаем промис после успешного выполнения запроса
+        resolve(json); // Возвращаем данные из сервера
       })
       .catch(error => {
         console.error(error);
         reject(error); // Отклоняем промис при возникновении ошибки
       });
   });
-}
+};
+
+
 
 export const order_send_req = (phone) => {
   fetch(`${baseUrl}${order_send}`, {

@@ -11,6 +11,7 @@ function AllProducts() {
           styles={'productsListContainer'}
           showCheckbox={true}
           location = 'all_products'
+          showPagination={true}
         />
     </div>
   )

@@ -10,7 +10,7 @@ function SalesPages() {
         styles={"productsListContainer"}
         showSale={true} // показываем продукты со скидкой
         showCheckbox={false}
-        showPagination={false}
+        showPagination={true}
       />
     </div>
   )

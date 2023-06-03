@@ -11,8 +11,12 @@ function Pagination({ totalPages, paginate }) {
 
   return (
     <div className={s.paginationContainer}>
-      {pageNumbers.map((number) => (
-        <Button key={number} onClick={() => paginate(number)} title={number} styles={'btnPaginate'}/>
+      {pageNumbers.map((pageNumber) => (
+        <Button 
+          key={pageNumber} 
+          onClick={() => paginate(pageNumber)} 
+          title={pageNumber} 
+          styles={'btnPaginate'}/>
       ))}
     </div>
   );

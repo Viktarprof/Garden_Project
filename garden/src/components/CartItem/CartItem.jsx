@@ -18,14 +18,14 @@ function CartItem({ product }) {
   const priceElement = discont_price ? (
     <>
       <p className={s.newPrice}>
-        {newDiscontPrice}
+        {newDiscontPrice.toFixed(2)}
         <span>$</span>
       </p>
       <p className={s.oldPrice}>{newPrice}$</p>
     </>
   ) : (
     <p className={s.newPrice}>
-      {newPrice}
+      {newPrice.toFixed(2)}
       <span>$</span>
     </p>
   );

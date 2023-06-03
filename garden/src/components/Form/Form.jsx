@@ -4,7 +4,7 @@ import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
 
 function Form({
-  submite,
+  submit,
   type,
   name,
   placeholder,
@@ -13,36 +13,38 @@ function Form({
   title,
   stylesBtn,
 }) {
+  const [error, setError] = useState(false);
 
-  const [error, setError] = useState(true);
 
   const valueInput = (event) => {
     const { value } = event.target;
     setError(!value.match(regexp));
   };
 
-  const checkRegexp = () => {
+  const checkRegexp = (event) => {
+    event.preventDefault();
+    if (!event.target.phone.value) {
+      alert("Please enter your phone number!");
+      return;
+    }
     if (error) {
-      alert("Please, enter your correct phone number (10 numbers)");
+      alert("Please enter a valid phone number (+ and 10 numbers)");
+    } else {
+      submit(event);
     }
   };
-  
+
   return (
     <div>
-      <form onSubmit={submite}>
+      <form onSubmit={checkRegexp}>
         <Input
           type={type}
           name={name}
           placeholder={placeholder}
-          regexp={regexp}
           styles={styles}
           onChange={valueInput}
-          onBlur={checkRegexp}
         />
-        <Button
-          title={title}
-          styles={stylesBtn}
-        />
+        <Button title={title} styles={stylesBtn} type="submit" />
       </form>
     </div>
   );

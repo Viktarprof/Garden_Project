@@ -19,25 +19,23 @@ function CartPages() {
     localStorage.setItem("products", JSON.stringify(cart));
   }, [cart]);
 
-  const submite = (event) => {
+  const submitForm = (event) => {
     event.preventDefault();
     const { phone } = event.target;
-    const phoneNumber = phone.value;
-    if (phoneNumber === "") {
-      alert("Please, enter a phone number"); // проверяю когда поле инпута пустое
-    } else {
-      const numberPhone = {
-        id: Date.now(),
-        phone: phoneNumber,
-      };
-      // console.log(numberPhone);
-      order_send_req(numberPhone);
-      dispatch(clearCartAction());
-      setModal(true);
-      event.target.reset();
-    }
-  };
+    const order = {
+      id: Date.now(),
+      phone: phone.value,
+      totalPrice: total,
+      products: cart,
+    };
 
+    // console.log(order);
+    order_send_req(order);
+    dispatch(clearCartAction());
+    setModal(true);
+    event.target.reset();
+  };
+  
   const closeModal = () => {
     setModal(false); // отключаю модальное окно
   };
@@ -58,11 +56,7 @@ function CartPages() {
 
       <div className={s.orderContainer}>
         <div className={s.testCONTAINER}>
-          {cart.length !== 0 ? (
-            <CartList />
-          ) : (
-            <p className={s.warning}>Your cart is empty!</p>
-          )}
+          {cart.length !== 0 ? <CartList /> : <p className={s.warning}>Your cart is empty!</p>}
         </div>
 
         <div className={`${s.orderDetail} ${s.stickyOrderDetail}`}>
@@ -72,12 +66,12 @@ function CartPages() {
             <p>{total}</p>
           </div>
           <Form
-            submite={submite}
-            type={"number"}
+            submit={submitForm}
+            type="text"
             placeholder={"Phone number"}
             name="phone"
             styles={"inputOrder"}
-            regexp={/^\d{10}$/}
+            regexp={/^\+\d{10}$/}
             stylesBtn={"orderBtn"}
             title={"Order"}
           />

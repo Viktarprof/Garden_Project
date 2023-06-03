@@ -46,21 +46,7 @@ export const categoryProductsReducer = (state = defaultState, action) => {
           })
           )
         }
-
-
-
-        // return { ...state, data: state.data.map((product) => ({
-        //   ...product, rangeVisible: 
-        //     product.price >= from && product.price <= to,
-        // }))};
-
-        // return {
-        //   ...state, data: state.data.map(elem => ({
-        //     ...elem, showByRange:
-        //       (elem.discont_price ? elem.discont_price : elem.price) >= from
-        //       && (elem.discont_price ? elem.discont_price : elem.price) <= to
-        //   })
-  
+        
         case FILTER_CATEGORY_PRODUCTS_BY_SALE:
           console.log(action.payload);
           return {...state, 

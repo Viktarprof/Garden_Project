@@ -6,17 +6,22 @@ import { useDispatch } from "react-redux";
 import { addToCartAction, incrCountAction } from "../../store/cartReducer";
 
 function Product({ product }) {
-
   const { id, title, image, price, discont_price, description } = product;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   });
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+  
   const dispatch = useDispatch();
 
   const baseUrl = "http://localhost:3333/";
   const newDiscontPrice = Math.floor(discont_price);
-  const discount = Math.floor(((newDiscontPrice - price) / newDiscontPrice) * 100);
+  const discount = Math.floor(
+    ((newDiscontPrice - price) / newDiscontPrice) * 100
+  );
 
   const priceElement = discont_price ? (
     <>
@@ -29,9 +34,10 @@ function Product({ product }) {
     </>
   ) : (
     <>
-    <p>{price} <span>$</span></p>
+      <p>
+        {price} <span>$</span>
+      </p>
     </>
-    
   );
 
   const zoomProps = {
@@ -41,11 +47,10 @@ function Product({ product }) {
     zoomPosition: "original",
   };
   const addToCartHandler = () => {
-
     dispatch(addToCartAction(product));
     dispatch(incrCountAction(product.id)); // когда нахожусь на стр продукта и добавляю его то в корзине отображается 1 без него 0
-    console.log('test click add product');
-  }
+    console.log("test click add product");
+  };
 
   return (
     <div className={s.infoContainer}>
@@ -56,7 +61,11 @@ function Product({ product }) {
         </div>
         <div className={s.textInfoProduct}>
           <div className={s.price}>{priceElement}</div>
-          <Button title={"To cart"} styles={"toCart"} onClick={addToCartHandler}/>
+          <Button
+            title={"To cart"}
+            styles={"toCart"}
+            onClick={addToCartHandler}
+          />
           <div className={s.dashed}></div>
           <div className={s.description}>
             <p>Description</p>

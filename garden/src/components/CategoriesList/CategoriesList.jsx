@@ -13,8 +13,11 @@ function CategoriesList({ title, showItems, styles, showBtn }) {
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(load_categories);
-    
   }, [dispatch]);
+
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
 
   const btnAllCategory = 

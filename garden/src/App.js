@@ -15,7 +15,7 @@ import CartPages from './components/Pages/CartPages/CartPages';
 function App() {
   return (
     <div className='wrapper'>
-      {/* <NavMenu/> */}
+      <NavMenu/>
       <Routes>
         <Route path="/" element={<HomePage/>} />
         <Route path="categories/all" element={<CategoriesPages/>} />

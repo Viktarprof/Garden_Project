@@ -18,6 +18,9 @@ function CartPages() {
   useEffect(() => {
     localStorage.setItem("products", JSON.stringify(cart));
   }, [cart]);
+  useEffect(() => {
+    document.title = 'Shopping cart';
+  }, ['Shopping cart']);
 
   const submitForm = (event) => {
     event.preventDefault();

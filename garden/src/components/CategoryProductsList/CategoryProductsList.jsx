@@ -12,6 +12,9 @@ function CategoryProductsList({ location, products, title }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   })
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
 
   products = products.filter((el) => el.showProductsSale && el.rangeVisible);

@@ -16,6 +16,7 @@ function CategoriesInfoPages() {
   const category_products = useSelector((store) => store.categoryProducts);
 
   useEffect(() => dispatch(GetCategoryProducts(id)), {})
+ 
 
 
   const products = category_products.data ? category_products.data : [];

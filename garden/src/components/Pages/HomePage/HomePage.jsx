@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-scroll";
 import s from "./HomePage.module.css";
 import Button from "../../UI/Button/Button";
@@ -8,6 +8,10 @@ import CategoriesList from "../../CategoriesList/CategoriesList";
 import ProductsList from "../../ProductsList/ProductsList";
 
 function HomePage() {
+  useEffect(() => {
+    document.title = 'Garden - main';
+  }, ['Garden - main']);
+
   return (
     <>
       <div className={s.titleContainer}>

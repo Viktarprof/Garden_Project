@@ -21,6 +21,10 @@ function ProductsList({
     window.scrollTo(0, 0);
     dispatch(load_products);
   }, []);
+  
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
 
   const dispatch = useDispatch();
   const allProducts = useSelector((store) => store.allProducts).filter(

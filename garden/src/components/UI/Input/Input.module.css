@@ -43,3 +43,16 @@
   margin: 0;
 }
 
+
+
+@media (max-width: 500px){
+
+  .inputOffer {
+    width: 370px;
+    height: 75.44px;
+    padding: 27px 0px 27px 20px;
+  }
+  .inputOrder {
+    width: 360px;
+  }
+}

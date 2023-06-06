@@ -1,7 +1,5 @@
 import React from "react";
 import s from "./Contacts.module.css";
-// import instagram from './media/iconsInstagramm.png'
-// import whatsApp from './media/iconswhatsapp.png'
 import {SlSocialInstagram } from 'react-icons/sl';
 import { BsWhatsapp } from 'react-icons/bs'
 
@@ -15,7 +13,6 @@ function Contacts() {
           <div className={s.instagram}>
           
             <a href="https://www.instagram.com/aittr.de/" target="_blank">
-              {/* <img width={46} src={instagram} alt="iconInstagram"/> */}
               <SlSocialInstagram width={46} />
               <p> instagram</p>
             </a>
@@ -23,7 +20,6 @@ function Contacts() {
           <div className={s.whatsApp}>
             <a href="https://api.whatsapp.com/send?phone=+493052014182_WhatsApp" target="_blank">
               <BsWhatsapp width={46} />
-              {/* <img src={whatsApp} alt="iconWhatsApp"/> */}
               <p> WhatsApp</p>
             </a>
           </div>
@@ -36,7 +32,6 @@ function Contacts() {
           </a>
           <p>Working Hours:</p>
           <p>24 hours a day</p>
-      
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import s from "./CartItem.module.css";
 import Button from "../UI/Button/Button";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
@@ -15,20 +15,17 @@ function CartItem({ product }) {
   const newDiscontPrice = Math.round(discont_price);
   const newPrice = Math.round(price);
 
-  const priceElement = discont_price ? (
-    <>
-      <p className={s.newPrice}>
-        {newDiscontPrice.toFixed(2)}
-        <span>$</span>
-      </p>
-      <p className={s.oldPrice}>{newPrice}$</p>
-    </>
-  ) : (
-    <p className={s.newPrice}>
-      {newPrice.toFixed(2)}
-      <span>$</span>
-    </p>
-  );
+  const priceElement = discont_price ? (<>
+                                          <p className={s.newPrice}>
+                                            {newDiscontPrice.toFixed(2)}
+                                            <span>$</span>
+                                          </p>
+                                          <p className={s.oldPrice}>{newPrice}$</p>
+                                        </>) 
+                                      : (<p className={s.newPrice}>
+                                            {newPrice.toFixed(2)}
+                                            <span>$</span>
+                                          </p>);
 
   return (
     <div className={s.itemContainer}>

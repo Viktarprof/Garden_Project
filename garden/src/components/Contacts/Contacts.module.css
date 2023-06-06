@@ -52,7 +52,6 @@
   color: black;
 }
 
-
 .addersPlace {
   width: 560px;
   margin-bottom: 20px;
@@ -71,4 +70,50 @@
 .addres p:nth-child(4) {
   font-weight: 600;
   font-size: 24px;
+}
+
+@media (max-width: 1300px) {
+  .contactsContainer {
+    width: 650px;
+    height: 700px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 700px) {
+  .contactsContainer {
+    width: 380px;
+    height: 700px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap:30px
+  }
+  .contact{
+    width: 370px;
+  }
+  .contact p {
+    font-weight: 500;
+    font-size: 40px;
+    margin-bottom: 30px;
+  }
+
+  .instagram p,
+  .whatsApp p {
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+  }
+  .socialLogo {
+    width: 380px;
+    justify-content: space-evenly
+  }
+  .addres{
+    margin-left: 10px;
+  }
+  .addersPlace {
+    width: 360px;
+}
 }

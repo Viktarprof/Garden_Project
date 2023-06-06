@@ -25,12 +25,12 @@ function HomePage() {
         </div>
       </div>
      
-        <CategoriesList
-          title={"Catalog"}
-          showItems={4}
-          styles={"categoryListContainer"}
-          showBtn={true}
-        />
+      <CategoriesList
+        title={"Catalog"}
+        showItems={4}
+        styles={"categoryListContainer"}
+        showBtn={true}
+      />
 
       <Offer />
       <div id="productsList">

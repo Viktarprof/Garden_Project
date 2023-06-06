@@ -41,11 +41,13 @@
   align-items: baseline;
   justify-items: center;
 }
+
 .price p:nth-child(1) {
   font-weight: 600;
   font-size: 60px;
   width: 206px;
 }
+
 span {
   font-weight: 500;
   font-size: 25px;
@@ -82,18 +84,102 @@ span {
 .description {
   width: 400px;
   margin-top: 25px;
+
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .description p:nth-child(1) {
   font-weight: 600;
   font-size: 20px;
 
   letter-spacing: 0.03em;
 }
+
 .description p:nth-child(2) {
   font-weight: 500;
   font-size: 20px;
   letter-spacing: 0.03em;
+}
+
+@media (max-width: 1300px) {
+  .infoContainer {
+    width: 900px;
+    height: 1600px;
+    margin-bottom: 50px;
+  }
+
+  .description,
+  .infoContainer h2,
+  .dashed {
+    width: 900px;
+  }
+
+  .info {
+    width: 900px;
+    height: 1300px;
+
+    flex-direction: column;
+    gap: 40px;
+    text-align: justify;
+  }
+
+  .textInfoProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .infoContainer img {
+    width: 710px;
+    height: 710px;
+  }
+}
+
+@media (max-width: 900px) {
+  .infoContainer,
+  .description,
+  .infoContainer h2,
+  .dashed {
+    width: 500px;
+  }
+
+  .infoContainer img {
+    width: 500px;
+    height: 500px;
+  }
+
+  .infoContainer,
+  .info {
+    height: 1200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .infoContainer,
+  .description,
+  .infoContainer h2,
+  .dashed {
+    width: 370px;
+  }
+
+  .price p:nth-child(1) {
+    width: 150px;
+  }
+
+  .price {
+    width: 360px;
+  }
+
+  .infoContainer img {
+    width: 360px;
+    height: 360px;
+  }
+  
+  .infoContainer,
+  .info {
+    width: 380px;
+  }
 }

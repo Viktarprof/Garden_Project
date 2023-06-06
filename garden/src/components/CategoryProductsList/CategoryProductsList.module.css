@@ -40,3 +40,41 @@
 
   letter-spacing: 0.03em;
 }
+
+@media (max-width: 1300px) {
+  .categoryListProduct {
+    width: 900px;
+  }
+  .categoryContainer {
+    width: 400px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .categoryListProduct {
+    width: 730px;
+    display: flex;
+    flex-direction: column;
+  }
+  .categoryContainer {
+    width: 730px;
+  }
+  .categoryListProduct h2 {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .categoryListProduct {
+    width: 380px;
+  }
+  .categoryContainer {
+    width: 380px;
+    grid-template-columns: 1fr;
+  }
+}

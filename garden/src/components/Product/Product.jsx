@@ -35,8 +35,8 @@ function Product({ product }) {
   );
 
   const zoomProps = {
-    width: 710,
-    height: 710,
+    width: window.innerWidth < 500 ? 360 : window.innerWidth < 901 ? 500 : 710,
+    height: window.innerWidth < 500 ? 360 : window.innerWidth < 901 ? 500 : 710,
     img: `${baseUrl}${image}`,
     zoomPosition: "original",
   };
@@ -54,7 +54,7 @@ function Product({ product }) {
         <div className={s.imageContainer}>
           <ImageZoom {...zoomProps} />
         </div>
-        <div>
+        <div className={s.textInfoProduct}>
           <div className={s.price}>{priceElement}</div>
           <Button title={"To cart"} styles={"toCart"} onClick={addToCartHandler}/>
           <div className={s.dashed}></div>

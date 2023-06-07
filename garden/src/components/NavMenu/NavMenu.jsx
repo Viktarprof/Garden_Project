@@ -43,7 +43,7 @@ function NavMenu() {
 
         <div className={s.navLinks}>
             <div className={s.links}>
-                <NavLink to="/" onClick={closeNavMenu}>
+                <NavLink to="/main" onClick={closeNavMenu}>
                     Main Page
                 </NavLink>
                 <NavLink to="/allProducts" onClick={closeNavMenu}>

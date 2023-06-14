@@ -97,6 +97,7 @@ function Filters({ showCheckbox, location }) {
           placeholder="from"
           name="from"
           onChange={handleRange}
+          targetInput={location}
         />
         <Input 
           type="text" 

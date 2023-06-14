@@ -16,7 +16,7 @@ function CartPages() {
   const cart = useSelector((store) => store.cart);
 
   useEffect(() => {
-    localStorage.setItem("products", JSON.stringify(cart));
+    localStorage.setItem("cartProducts", JSON.stringify(cart));
   }, [cart]);
   useEffect(() => {
     document.title = 'Shopping cart';
@@ -24,6 +24,10 @@ function CartPages() {
 
   const submitForm = (event) => {
     event.preventDefault();
+    if (cart.length === 0) {
+      return alert('Your cart is empty!'); // Если корзина пустая, то alert
+    }
+    
     const { phone } = event.target;
     const order = {
       id: Date.now(),
@@ -32,7 +36,7 @@ function CartPages() {
       products: cart,
     };
 
-    // console.log(order);
+    console.log(order);
     order_send_req(order);
     dispatch(clearCartAction());
     setModal(true);
@@ -59,7 +63,7 @@ function CartPages() {
 
       <div className={s.orderContainer}>
         <div className={s.testCONTAINER}>
-          {cart.length !== 0 ? <CartList /> : <p className={s.warning}>Your cart is empty!</p>}
+          {cart.length !== 0 ? <CartList /> : <p className="productsResult">Your cart is empty!</p>}
         </div>
 
         <div className={`${s.orderDetail} ${s.stickyOrderDetail}`}>

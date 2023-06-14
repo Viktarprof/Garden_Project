@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import s from "./CategoryProductsList.module.css";
 import ProductItem from "../ProductItem/ProductItem";
-import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 import Filters from "../Filters/Filters";
-import Button from "../UI/Button/Button";
-import { NavLink } from "react-router-dom";
+
 
 
 function CategoryProductsList({ location, products, title }) {
@@ -27,7 +25,7 @@ function CategoryProductsList({ location, products, title }) {
         location={location}
       />
       <div className={s.categoryContainer}>
-        { products.length === 0 ? <p>Products not found </p> : products.map((el) => <ProductItem key={el.id} product={el}/>)}
+        { products.length === 0 ? <p className="productsResult">Products not found </p> : products.map((el) => <ProductItem key={el.id} product={el}/>)}
       </div>
     </div>
   );

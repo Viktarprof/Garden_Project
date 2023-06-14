@@ -53,8 +53,8 @@ function Product({ product }) {
   };
 
   return (
-    <div className={s.infoContainer}>
-      <h2>{title}</h2>
+    <>
+    <h2>{title}</h2>
       <div className={s.info}>
         <div className={s.imageContainer}>
           <ImageZoom {...zoomProps} />
@@ -73,7 +73,7 @@ function Product({ product }) {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

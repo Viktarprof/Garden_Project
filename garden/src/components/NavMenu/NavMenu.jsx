@@ -5,9 +5,6 @@ import {HiOutlineShoppingBag} from 'react-icons/hi'
 import logo from '../NavMenu/media/mainLogo.png'
 import Button from '../UI/Button/Button';
 import { useSelector } from 'react-redux';
-import Burger from '../Burger/Burger';
-
-
 
 export default memo(
 function NavMenu() {
@@ -19,6 +16,7 @@ function NavMenu() {
 
     const activeBurger = () => {
       setActive(!active);
+
     };
     const closeNavMenu = () => {
         setActive(false);
@@ -43,7 +41,7 @@ function NavMenu() {
 
         <div className={s.navLinks}>
             <div className={s.links}>
-                <NavLink to="/main" onClick={closeNavMenu}>
+                <NavLink to="/" onClick={closeNavMenu}>
                     Main Page
                 </NavLink>
                 <NavLink to="/allProducts" onClick={closeNavMenu}>

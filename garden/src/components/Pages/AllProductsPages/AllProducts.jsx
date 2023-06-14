@@ -5,7 +5,7 @@ import ProductsList from '../../ProductsList/ProductsList'
 
 function AllProducts() {
   return (
-    <div>
+    <>
         <ProductsList 
           title={'All products'}
           styles={'productsListContainer'}
@@ -13,7 +13,7 @@ function AllProducts() {
           location = 'all_products'
           showPagination={true}
         />
-    </div>
+    </>
   )
 }
 

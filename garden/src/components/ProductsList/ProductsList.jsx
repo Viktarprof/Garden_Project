@@ -14,14 +14,13 @@ function ProductsList({
   showSale,
   showCheckbox,
   onChange,
-  showPagination
+  showPagination,
 }) {
-
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(load_products);
   }, []);
-  
+
   useEffect(() => {
     document.title = title;
   }, [title]);
@@ -30,9 +29,9 @@ function ProductsList({
   const allProducts = useSelector((store) => store.allProducts).filter(
     (el) => el.showProductsSale && el.rangeVisible
   );
-  
+
   const [currentPage, setCurrentPage] = useState(1); // отслеживаю текующую страницу
-  const productsPerPage = 12; 
+  const productsPerPage = 12;
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
 
@@ -59,16 +58,23 @@ function ProductsList({
         onChange={onChange}
         location={location}
       />
-      <div className={s.productsList}>
-        {currentProducts.map((el) => (
-          <ProductItem key={el.id} {...el} product={el}/>
-        ))}
-      </div>
-      {showPagination ? ( <Pagination
-                  currentPage={currentPage}
-                  totalPages={Math.ceil(showSaleProducts.length / productsPerPage)}
-                  paginate={paginate}
-                />
+      {allProducts.length === 0 ? (
+        <p className="productsResult">
+          TRY AGAIN! <span>No results matching your search filters criteria.</span> 
+        </p>
+      ) : (
+        <div className={s.productsList}>
+          {currentProducts.map((el) => (
+            <ProductItem key={el.id} {...el} product={el} />
+          ))}
+        </div>
+      )}
+      {showPagination ? (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(showSaleProducts.length / productsPerPage)}
+          paginate={paginate}
+        />
       ) : null}
     </div>
   );

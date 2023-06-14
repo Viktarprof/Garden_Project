@@ -25,3 +25,10 @@
 button{
   cursor: pointer;
 }
+.productsResult{
+  font-size: 30px;
+  color: crimson;
+
+  display: flex;
+  flex-direction: column;
+}

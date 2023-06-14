@@ -70,10 +70,6 @@
   font-size: 32px;
 }
 
-.warning{
-  font-size: 30px;
-  color: crimson;
-}
 .modalBackdrop {
   position: fixed;
   top: 0;

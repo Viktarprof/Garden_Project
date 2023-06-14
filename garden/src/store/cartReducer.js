@@ -1,4 +1,4 @@
-const defaultState =  JSON.parse(localStorage.getItem('products')) ??  [];
+const defaultState = [];
 
 const ADD_TO_CART = "ADD_TO_CART";
 const INCR_COUNT_PRODUCT = "INCR_COUNT_PRODUCT";

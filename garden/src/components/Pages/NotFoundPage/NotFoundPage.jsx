@@ -8,7 +8,6 @@ function NotFoundPage() {
     <div className={s.notFoundContainer}>
         <img width={1350} src={notFound} alt="notFoundPage" />
         <img width={60} src={flower} alt="flower" className={s.flower}/>
-        
     </div>
   )
 }

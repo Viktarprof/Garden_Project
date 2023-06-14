@@ -1,4 +1,4 @@
-const defaultState = [];
+const defaultState =  JSON.parse(localStorage.getItem('allProducts')) ??  [];
 
 const LOAD_PRODUCTS = "LOAD_PRODUCTS";
 const LOAD_INFO_PRODUCTS = "LOAD_INFO_PRODUCTS";
@@ -51,17 +51,17 @@ export const productsReducer = (state = defaultState, action) => {
         rangeVisible: product.price >= from && product.price <= to,
       }));
 
-      case FILTER_PRODUCTS_BY_SALE:
-        if (action.payload){
-            return state.map(elem => {
-                if(elem.discont_price === null){
-                    elem.showProductsSale = false
-                }
-                return elem
-            })
-        } else {
-            return state.map(elem => ({...elem, showProductsSale: true}))
-        };
+    case FILTER_PRODUCTS_BY_SALE:
+      if (action.payload){
+          return state.map(elem => {
+              if(elem.discont_price === null){
+                  elem.showProductsSale = false
+              }
+              return elem
+          })
+      } else {
+          return state.map(elem => ({...elem, showProductsSale: true}))
+      };
         
 
     default:

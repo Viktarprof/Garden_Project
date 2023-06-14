@@ -26,10 +26,15 @@
   align-items: center;
   justify-content: center;
   gap: 129px;
+  margin: 35px 0 190px 0;
 }
 .infoContainer img {
   width: 710px;
   height: 710px;
+}
+
+.imageContainer{
+  cursor: all-scroll;
 }
 
 .price {

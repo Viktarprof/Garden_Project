@@ -169,12 +169,15 @@ span {
   .dashed {
     width: 370px;
   }
+  .infoContainer{
+    margin-top: 50px;
+  }
   .infoContainer h2{
     margin: 80px 0 80px 0;
   }
 
   .price p:nth-child(1) {
-    width: 150px;
+    width: 175px;
   }
 
   .price {

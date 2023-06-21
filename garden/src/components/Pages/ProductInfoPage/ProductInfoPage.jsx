@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { GetInfoProducts } from "../../../asyncActions/requests_products";
 import Product from "../../Product/Product";
+import NotFoundPage from "../NotFoundPage/NotFoundPage";
 
 function ProductInfoPage() {
   const { id } = useParams();
@@ -13,14 +14,21 @@ function ProductInfoPage() {
   // console.log(category_products);
 
   useEffect(() => dispatch(GetInfoProducts(id)), []);
+  
+  const product = category_products.find((el) => el.id !== id);
+  if(!product){
+    return <NotFoundPage/>
+  }
 
   return (  
-    <div>
-        {category_products.map((el) => 
+    <>
+      {
+      category_products.map((el) => 
             <Product 
                 key={el.id} 
                 product={el}/>)}
-    </div>
+      
+    </>
   )
 }
 

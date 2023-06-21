@@ -14,15 +14,15 @@ const FILTER_PRODUCTS_BY_SALE = "FILTER_PRODUCTS_BY_SALE";
 export const productsReducer = (state = defaultState, action) => {
   switch (action.type) {
     case LOAD_PRODUCTS:
-      return action.payload.map((product) => ({
+      return action.payload ? [...action.payload.map((product) => ({
         ...product,
         rangeVisible: true,
         showProductsSale: true // обратить внимание. задаем свойсво. без его не отображался список продуктов во время
-      }));
+      }))] : state;
 
     case LOAD_INFO_PRODUCTS:
-      return [...action.payload];
-
+      return Array.isArray(action.payload) ? [...action.payload] : state;
+  
     case SORT_BY_DEFAULT:
       const copyState = [...state];
       return copyState.sort((a, b) => a.id - b.id);

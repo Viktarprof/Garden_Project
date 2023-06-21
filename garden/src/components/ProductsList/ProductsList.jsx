@@ -22,7 +22,7 @@ function ProductsList({
   }, []);
 
   useEffect(() => {
-    document.title = title;
+    document.title = 'Garden: ' + title;
   }, [title]);
 
   const dispatch = useDispatch();

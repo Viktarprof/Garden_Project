@@ -19,8 +19,8 @@ function CartPages() {
     localStorage.setItem("cartProducts", JSON.stringify(cart));
   }, [cart]);
   useEffect(() => {
-    document.title = 'Shopping cart';
-  }, ['Shopping cart']);
+    document.title = 'Garden: Shopping cart';
+  }, ['Garden: Shopping cart']);
 
   const submitForm = (event) => {
     event.preventDefault();

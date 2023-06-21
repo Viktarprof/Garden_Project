@@ -30,7 +30,7 @@ function NavMenu() {
        </div>
 
     <div className={`${s.navMenuContainer} ${active ? s.active : ""}`}>
-         <div className={s.logo_Btn}>
+         <div className={s.logo_Btn} >
             <NavLink to="/" onClick={closeNavMenu}>
                 <img width={72} src={logo} alt="logo" />
             </NavLink>

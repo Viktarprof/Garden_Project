@@ -5,6 +5,7 @@ import { load_categories } from "../../asyncActions/requests_products";
 import CategoryItem from "../CategoryItem/CategoryItem";
 import Button from "../UI/Button/Button";
 import { NavLink } from "react-router-dom";
+import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 
 function CategoriesList({ title, showItems, styles, showBtn }) {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ function CategoriesList({ title, showItems, styles, showBtn }) {
   }, [dispatch]);
 
   useEffect(() => {
-    document.title = title;
+    document.title = 'Garden: ' + title;
   }, [title]);
 
 

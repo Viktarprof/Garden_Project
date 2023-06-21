@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import s from "./CategoryProductsList.module.css";
 import ProductItem from "../ProductItem/ProductItem";
 import Filters from "../Filters/Filters";
+import NotFoundPage from "../Pages/NotFoundPage/NotFoundPage";
 
 
 
@@ -11,7 +12,7 @@ function CategoryProductsList({ location, products, title }) {
     window.scrollTo(0, 0);
   })
   useEffect(() => {
-    document.title = title;
+    document.title = 'Garden: ' + title;
   }, [title]);
 
 

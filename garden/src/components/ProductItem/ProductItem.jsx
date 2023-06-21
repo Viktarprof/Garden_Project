@@ -29,7 +29,7 @@ function ProductItem({ product }) {
   return (
     <div className={s.productItem}>
       <NavLink to={`/products/${id}`}>
-        <img width={319} src={`${baseUrl}${image}`} alt={title} />
+        <img className={s.productImage} width={319} src={`${baseUrl}${image}`} alt={title} />
       </NavLink>
       <div className={`${s.addToCart}`}>
         <Button title={"To cart"} styles={"addToCart"} onClick={addToCartHandler} />

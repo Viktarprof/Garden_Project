@@ -1,12 +1,9 @@
-
 import React, { useEffect } from 'react';
 import s from './CategoriesInfoPages.module.css';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { GetCategoryProducts } from '../../../asyncActions/requests_products';
 import CategoryProductsList from '../../CategoryProductsList/CategoryProductsList';
-
-
 
 function CategoriesInfoPages() {
  
@@ -17,8 +14,6 @@ function CategoriesInfoPages() {
 
   useEffect(() => dispatch(GetCategoryProducts(id)), {})
  
-
-
   const products = category_products.data ? category_products.data : [];
   const title = category_products.category ? category_products.category.title : '';
   console.log(products);

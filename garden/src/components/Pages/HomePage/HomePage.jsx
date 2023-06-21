@@ -9,8 +9,8 @@ import ProductsList from "../../ProductsList/ProductsList";
 
 function HomePage() {
   useEffect(() => {
-    document.title = 'Garden - home';
-  }, ['Garden - home']);
+    document.title = 'Garden: Main';
+  }, ['Garden: Main']);
 
   return (
     <>

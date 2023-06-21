@@ -7,7 +7,7 @@ export const loadCategories = (payload) => ({ type: LOAD_CATEGORIES, payload });
 export const categoryReducer = (state = defaultState, action) => {
   switch (action.type) {
     case LOAD_CATEGORIES:
-      return [...action.payload];
+      return Array.isArray(action.payload) ? [...action.payload] : state;
 
     default:
       return state;

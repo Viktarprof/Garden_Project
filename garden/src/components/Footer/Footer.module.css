@@ -15,3 +15,8 @@
     height: 1250px;
   }
 }
+@media (max-width: 600px) {
+  .footerContainer {
+    margin-top: 100px;
+  }
+}
